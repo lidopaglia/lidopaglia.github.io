@@ -45,7 +45,7 @@ body {
     margin-right: 1.0rem;
     font-size: 3.1rem;
 }
-.centered .about ul li a:hover, .centered .about ul li a:focus {
+.centered .about ul li a:hover {
     color: #5AF;
     transition: all .5s;
 }
@@ -83,7 +83,7 @@ body {
     .centered .about ul li a {
         color: white;
     }
-    .centered .about ul li a:hover, .centered .about ul li a:focus {
+    .centered .about ul li a:hover {
         color: #AAF;
         transition: all .5s;
     }
