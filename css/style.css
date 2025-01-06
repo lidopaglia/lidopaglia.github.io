@@ -1,96 +1,147 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html {
+    color-scheme: light dark;
+    height: -webkit-fill-available;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
 body {
-  animation: fadeInAnimation ease 1s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+    width: min(65ch, 100% - 4rem);
+    margin-inline: auto;
+}
+
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  width: 100%;
+    display: flex;
+    flex: 1;
+    width: 100%;
 }
-.content {
-  flex: 1;
-  display: flex;
-  margin-top: 1.6rem;
-  margin-bottom: 3.2rem;
-}
-.container {
-  margin: 0 auto;
-  max-width: 90.0rem;
-  width: 100%;
-  padding-left: 2.0rem;
-  padding-right: 2.0rem;
-}
+
 .centered {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.centered .about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     text-align: center;
 }
-.centered .about ul {
+
+.centered ul {
     list-style: none;
-    margin: 3.0rem 0 1.0rem 0;
+    margin: 1.0rem 0 1.0rem 0;
     padding: 0;
+    padding-top: 1em;
 }
-.centered .about ul li {
+
+.centered ul li {
     display: inline-block;
     position: relative;
 }
-.centered .about ul li a {
-    color: #212121;
+
+.centered ul li a {
     margin-left: 1.0rem;
     margin-right: 1.0rem;
-    font-size: 3.1rem;
+    font-size: 2.5rem;
 }
-.centered .about ul li a:hover {
-    color: #5AF;
+
+.centered ul li a:hover {
     transition: all .5s;
 }
+
 .avatar img {
-  width: 15rem;
-  height: auto;
-  border-radius: 15%;
+    width: 20rem;
+    height: auto;
+    border-radius: 50%;
 }
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-height: 1024px) {
     .centered .about ul li a {
-        font-size: 2.4rem;
+        font-size: 2.1rem;
+    }
+
+    .avatar img {
+        width: 15rem;
     }
 }
-@media only screen and (max-width: 600px) {
+
+@media only screen and (max-height: 400px) {
     .centered .about ul li a {
         font-size: 1.8rem;
     }
+
+    .avatar img {
+        width: 13rem;
+    }
+}
+
+@media only screen and (max-height: 300px) {
+    .centered .about ul li a {
+        font-size: 1.5rem;
+    }
+
     .avatar img {
         width: 10rem;
     }
 }
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
 }
+
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: black;
-        color: white;
+        background-color: #111;
+
+        a {
+            color: #333;
+        }
     }
-    .centered .about ul li a {
-        color: white;
-    }
-    .centered .about ul li a:hover {
-        color: #AAF;
-        transition: all .5s;
+
+    @media (hover: hover) and (pointer: fine) {
+        a:hover {
+            color: #ccc;
+        }
     }
 }
+
 @media (prefers-color-scheme: light) {
     body {
-        background-color: white;
-        color: black;
+        background-color: #fff;
+
+        a {
+            color: #bbb;
+        }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        a:hover {
+            color: #333;
+        }
     }
 }
